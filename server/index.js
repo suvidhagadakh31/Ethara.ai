@@ -79,9 +79,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS - allow frontend origin
 app.use(cors({
-  origin: isProduction   
-  ? ['https://etharaai-production-b471.up.railway.app']
-  : ['http://localhost:5173', 'http://localhost:3000'],
+  origin: ['https://etharaai-production-b471.up.railway.app','http://localhost:5173', 'http://localhost:3000'] ,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization']
