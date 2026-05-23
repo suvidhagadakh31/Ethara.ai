@@ -1,0 +1,14 @@
+# Railway Nixpacks Build Configuration
+# This file tells Railway how to build and run the application
+
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmds = ["npm install && cd server && npm install && cd ../client && npm install"]
+
+[phases.build]
+cmds = ["cd client && npm run build"]
+
+[start]
+cmd = "NODE_ENV=production node server/index.js"
